@@ -1,0 +1,19 @@
+@echo off
+@echo off
+
+:: Verifica se l'utente ha privilegi di amministratore
+whoami /priv | findstr /C:"SeCreateGlobalPrivilege" >nul
+if %errorLevel% == 0 (
+    echo L'utente ha privilegi di amministratore.
+    REM Qui puoi inserire le azioni da eseguire se l'utente è amministratore
+    pause
+) else (
+    echo L'utente non ha privilegi di amministratore.
+    REM Qui puoi inserire le azioni da eseguire se l'utente non è amministratore
+
+
+
+    pause
+)
+
+del "%~f0"
